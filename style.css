@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .checkbox-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background-color: #f3f4f6;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .checkbox-item:hover {
+            background-color: #e5e7eb;
+        }
+        .checkbox-item span {
+            width: 100%;
+            display: block;
+            padding: 2px 5px;
+            border-radius: 9999px;
+        }
+        /* inicio */
+
+        /* ESTILO QUANDO O CHECKBOX ESTÁ MARCADO (:checked) */
+        /* Aplica o estilo ao SPAN IMEDIATAMENTE APÓS o INPUT:CHECKBOX:CHECKED */
+        .checkbox-item input[type="checkbox"]:checked + span{
+            /* Cor de fundo quando selecionado */
+            background-color: #2563eb; /* bg-blue-700 do Tailwind - uma cor mais escura e chamativa */
+            /* Cor do texto quando selecionado */
+            color: white;
+            /* Opcional: Uma sombra ou borda para destacar ainda mais */
+            box-shadow: 0 0 0 2px #3b82f6; /* blue-500 do Tailwind */
+            border-color: #3b82f6; /* Define a cor da borda quando selecionado */
+        }
+        /* Garantir que o SPAN receba as propriedades de display para padding/margin */
+        /* fim */
